@@ -1,28 +1,29 @@
-import {ListaPresidentesComponent} from './lista-presidentes/lista-presidentes.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import {DetalhaCandidatoComponent} from './detalha-candidato/detalha-candidato.component';
-import {InicioComponent} from './inicio/inicio.component';
-import {NaoEncontradoComponent} from './nao-encontrado/nao-encontrado.component';
+import {DetalhaCandidatoComponent} from './paginas/lista-candidato/detalha-candidato/detalha-candidato.component';
+import {InicioComponent} from './paginas/inicio/inicio.component';
+import {NaoEncontradoComponent} from './paginas/nao-encontrado/nao-encontrado.component';
 import {AppRoutingModule} from './app-route.routing';
+import {ListaCandidatoComponent} from './paginas/lista-candidato/lista-candidato.component';
+import {SharedModule} from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaPresidentesComponent,
     DetalhaCandidatoComponent,
     InicioComponent,
-    NaoEncontradoComponent
-
+    NaoEncontradoComponent,
+    ListaCandidatoComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

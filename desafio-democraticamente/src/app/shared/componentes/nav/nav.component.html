@@ -1,0 +1,11 @@
+<header>
+  <a title="Clique aqui para voltar para o inicio" routerLink="/" >
+    <img src="assets/logo.png" alt="">
+  </a>
+  <a class="menu-icon" (click)="isOpen = !isOpen"><i class="fa fa-bars"></i></a>
+</header>
+
+
+<aside id="lateral-direita" *ngIf="isOpen">
+  <app-cargos [isMenu]="true" (aoSelecionar)="aoSelecionarMetodo($event)"></app-cargos>
+</aside>

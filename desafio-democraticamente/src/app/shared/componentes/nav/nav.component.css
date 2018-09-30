@@ -1,0 +1,39 @@
+header {
+  max-width: 100%;
+  margin: 0 auto;
+  background-image: linear-gradient(#0c7b70, #547b6a);
+}
+
+header > a{
+  cursor: pointer;
+  height: 100%;
+
+}
+
+img {
+  width: auto;
+  height: 120px;
+  max-width: 80%;
+  padding: 5px 40px;
+}
+
+a.menu-icon {
+  float: right;
+
+  font-size: 30pt;
+  color: #f2f2f2;
+  width: 60px;
+  margin: 0;
+  padding: 40px 50px;
+}
+
+aside#lateral-direita {
+  background-color: #f2f2f2;
+  height: 90vh;
+  position: absolute;
+  width: 300px;
+  right: 0;
+  -webkit-box-shadow: -8px 0px 13px -6px rgba(189,189,189,1);
+  -moz-box-shadow: -8px 0px 13px -6px rgba(189,189,189,1);
+  box-shadow: -8px 0px 13px -6px rgba(189,189,189,1);
+}

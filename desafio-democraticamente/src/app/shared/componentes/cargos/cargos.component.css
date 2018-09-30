@@ -1,0 +1,34 @@
+li:hover {
+  background-color: rgba(0, 193, 166, 0.17);
+  cursor: pointer;
+  border-left: #0c7b70 5px solid;
+}
+
+ul.menu {
+  margin: 0 auto;
+  padding: 0;
+}
+
+ul.menu > li {
+  display: inline-block;
+  padding: 20px;
+  /*margin: 25px;*/
+  width: 100%;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 20pt;
+}
+
+ul.grid {
+  margin: 0 auto;
+  padding: 0;
+  width: 60vw;
+}
+
+ul.grid > li {
+  display: inline-block;
+  padding: 20px;
+  /*margin: 25px;*/
+  width: calc(30% - 40px);
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 20pt;
+}

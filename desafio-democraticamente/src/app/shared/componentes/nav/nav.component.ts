@@ -2,13 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.css']
 })
-export class InicioComponent implements OnInit {
-  public titulo = 'Democraticamente';
-  public cargo = 'Presida';
+export class NavComponent implements OnInit {
+
+  isOpen = true;
 
   constructor(private router: Router) {
   }
@@ -17,6 +17,7 @@ export class InicioComponent implements OnInit {
   }
 
   aoSelecionarMetodo($event) {
+    this.isOpen = !this.isOpen;
     this.router.navigateByUrl(`/listar/${$event}`);
   }
 }

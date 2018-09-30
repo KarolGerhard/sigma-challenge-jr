@@ -1,0 +1,3 @@
+<ul [ngClass]="isMenu ? 'menu' : 'grid'">
+  <li *ngFor="let cargo of cargos" (click)="selecionar(cargo)">{{ cargo | titlecase }}</li>
+</ul>
