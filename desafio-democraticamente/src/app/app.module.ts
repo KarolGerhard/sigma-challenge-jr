@@ -10,6 +10,8 @@ import {AppRoutingModule} from './app-route.routing';
 import {ListaCandidatoComponent} from './paginas/lista-candidato/lista-candidato.component';
 import {SharedModule} from './shared/shared.module';
 import {FormsModule} from '@angular/forms';
+import { MostraDetalheCandidatoComponent } from './paginas/lista-candidato/mostra-detalhe-candidato/mostra-detalhe-candidato.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -19,9 +21,11 @@ import {FormsModule} from '@angular/forms';
     InicioComponent,
     NaoEncontradoComponent,
     ListaCandidatoComponent,
+    MostraDetalheCandidatoComponent,
   ],
   imports: [
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,

@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnChanges, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ConsultaService} from '../../shared/services/consulta.service';
 import {EstadoService} from '../../shared/services/estado.service';
@@ -19,7 +19,7 @@ export class ListaCandidatoComponent implements OnInit, OnChanges {
   public estadoSelecionado = 'MT';
   public filtro: string;
 
-  constructor(private consultaService: ConsultaService, private route: ActivatedRoute, private estadosService: EstadoService) {
+  constructor(private cd: ChangeDetectorRef, private consultaService: ConsultaService, private route: ActivatedRoute, private estadosService: EstadoService) {
 
   }
 
@@ -40,13 +40,14 @@ export class ListaCandidatoComponent implements OnInit, OnChanges {
     this.consultaService.buscarCandidatos(this.cargo, this.estadoSelecionado)
       .subscribe(x => {
           this.dados = x;
-          console.log(x);
         },
         erro => console.error(erro));
   }
 
   detalhaCandidato(candidato: any) {
     this.candidatoSelecionado = candidato;
+    sessionStorage.setItem(candidato.id, JSON.stringify(candidato));
+    this.cd.detectChanges();
   }
 
 }

@@ -26,7 +26,6 @@ export class DetalhaCandidatoComponent implements OnInit, OnChanges {
       this.consultaService.buscaDetalhesCandidato(this.candidato.cargo.codigo, id)
         .subscribe(x => {
           this.dadosCandidato = x;
-          console.log(x);
         });
     }
   }

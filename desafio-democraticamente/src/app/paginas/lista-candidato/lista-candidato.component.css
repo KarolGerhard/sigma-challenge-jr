@@ -1,14 +1,15 @@
 #customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: 'Raleway', sans-serif;
   border-collapse: collapse;
-  width: 50%;
+  /*width: 50%;*/
   float: left;
+  margin-top: 40px;
 }
 
+/*
 #customers td,
 #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
+
 }
 
 #customers tr:nth-child(even) {
@@ -20,19 +21,144 @@
 }
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4caf50;
+
+
   color: white;
+}*/
+th {
+  background-color: #80c166;
 }
 
-.esse-nao {
-  background-color: red !important;
+tr:hover {
+  background-color: rgba(84, 123, 106, 0.19);
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  padding: 12px 10px;
+}
+
+.seleciona {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 10px;
+}
+
+.seleciona > label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+
+}
+
+.seleciona > select {
+  width: 33%;
+  padding: 10px 15px;
+  border: none;
+  background-color: rgba(76, 175, 80, 0.12);
+  margin-top: 10px;
+}
+
+.pesquisa {
+  width: calc(300px + 30px);
+  margin: 0 auto;
+}
+
+input {
+  background: white url('../../../assets/filtro.png') no-repeat 5px 5px;
+  padding: 5px 5px 5px 30px;
+  width: 100%;
+  height: 25px;
+  border-radius: 4px;
+  margin: 20px auto;
+}
+
+div.conteudo {
+  width: 700px;
+  margin: 0 auto;
 }
 
 #detalhe {
-  width: 48%;
+  width: 30%;
   display: inline-block;
   float: right;
+  font-family: 'Raleway', sans-serif;
+}
+
+.row-nome {
+  width: 250px;
+}
+
+.row-numero {
+  width: 30px;
+}
+
+.row-partido {
+  width: 60px;
+}
+
+@media screen and (max-width: 1000px) {
+  div.conteudo {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  table#customers {
+    width: 50%;
+    margin-left: 20px;
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .pesquisa {
+    width: calc(100vw - 30px);
+    margin: 0 auto;
+  }
+
+  input {
+    width: 88%;
+    height: 25px;
+    border-radius: 4px;
+    margin: 20px auto;
+  }
+
+  div.conteudo {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  table#customers {
+    width: 100%;
+    table-layout: fixed;
+    margin: 0;
+    /*height:200px;*/
+    border-collapse: collapse;
+  }
+
+  .row-nome {
+    width: 50%;
+  }
+
+  .row-numero {
+    width: 20%;
+  }
+
+  .row-partido {
+    width: 20%;
+  }
+
+  /*table#customers thead{*/
+    /*display: block;*/
+    /*width: 360px;*/
+  /*}*/
+
+  /*table#customers tbody {*/
+    /*height: 200px;*/
+    /*width: 360px;*/
+    /*overflow: auto;*/
+  /*}*/
+
+  /*table#customers tbody > tr{*/
+    /*width: 100%;*/
+  /*}*/
 }

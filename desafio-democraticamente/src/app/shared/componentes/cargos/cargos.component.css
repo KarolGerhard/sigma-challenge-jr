@@ -12,23 +12,66 @@ ul.menu {
 ul.menu > li {
   display: inline-block;
   padding: 20px;
-  /*margin: 25px;*/
   width: 100%;
-  font-family: 'Cabin Condensed', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 20pt;
 }
 
 ul.grid {
   margin: 0 auto;
   padding: 0;
-  width: 60vw;
+  width: 50vw;
 }
 
 ul.grid > li {
-  display: inline-block;
-  padding: 20px;
-  /*margin: 25px;*/
+  display: inline-grid;
+  padding: 30px;
   width: calc(30% - 40px);
-  font-family: 'Cabin Condensed', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 20pt;
+  text-align: center;
+}
+
+ul.grid > li:hover{
+  border-right: #0c7b70 5px solid;
+  background: rgba(76, 175, 80, 0.15);
+  -webkit-transition: width 0.2s; /* Safari */
+  transition: border-width 0.2s;
+  color: #0c7b70;
+}
+
+@media screen and (max-width: 1024px) {
+  ul.grid{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  ul.menu > li{
+    font-size: 16px;
+    border-bottom: rgba(0,0,0, 1) 1pt solid;
+  }
+
+  ul.menu > li:last-child{
+    border-bottom: none;
+  }
+
+  ul.grid{
+    width: 100%;
+  }
+
+  ul.grid > li {
+    display: block;
+    width: calc(100% - 60px);
+    font-size: 20px;
+    border-bottom: #12757b 1pt solid;
+  }
+
+  ul.grid > li:last-child{
+    border-bottom: none;
+  }
+
+  ul.grid > li:focus{
+    background-color: #12757b;
+  }
 }

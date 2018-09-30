@@ -79,7 +79,6 @@ export class ConsultaService {
   private gravarNoCache(url: string, dados: any): void {
     try {
       sessionStorage.setItem(url, JSON.stringify(dados));
-
     } catch (e) {
       sessionStorage.clear();
       sessionStorage.setItem(url, JSON.stringify(dados));

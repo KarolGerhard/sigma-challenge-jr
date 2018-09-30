@@ -1,0 +1,6 @@
+div > figure{
+  margin-top: 40px;
+}
+figure > img{
+  border-radius: 20px;
+}

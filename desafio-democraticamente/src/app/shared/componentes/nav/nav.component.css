@@ -4,10 +4,9 @@ header {
   background-image: linear-gradient(#0c7b70, #547b6a);
 }
 
-header > a{
+header > a {
   cursor: pointer;
   height: 100%;
-
 }
 
 img {
@@ -19,7 +18,6 @@ img {
 
 a.menu-icon {
   float: right;
-
   font-size: 30pt;
   color: #f2f2f2;
   width: 60px;
@@ -33,7 +31,28 @@ aside#lateral-direita {
   position: absolute;
   width: 300px;
   right: 0;
-  -webkit-box-shadow: -8px 0px 13px -6px rgba(189,189,189,1);
-  -moz-box-shadow: -8px 0px 13px -6px rgba(189,189,189,1);
-  box-shadow: -8px 0px 13px -6px rgba(189,189,189,1);
+  -webkit-box-shadow: -8px 0px 13px -6px rgba(189, 189, 189, 1);
+  -moz-box-shadow: -8px 0px 13px -6px rgba(189, 189, 189, 1);
+  box-shadow: -8px 0px 13px -6px rgba(189, 189, 189, 1);
+  font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 640px) {
+  img {
+    height: auto;
+    width: 50%;
+    padding: 5px 0;
+  }
+
+  a.menu-icon {
+    padding: 40px 10px;
+  }
+
+  /*header {*/
+    /*position: fixed;*/
+  /*}*/
+
+  /*header:after {*/
+    /*height: 200px;*/
+  /*}*/
 }
