@@ -9,6 +9,7 @@ import {NaoEncontradoComponent} from './paginas/nao-encontrado/nao-encontrado.co
 import {AppRoutingModule} from './app-route.routing';
 import {ListaCandidatoComponent} from './paginas/lista-candidato/lista-candidato.component';
 import {SharedModule} from './shared/shared.module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {SharedModule} from './shared/shared.module';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     SharedModule
   ],

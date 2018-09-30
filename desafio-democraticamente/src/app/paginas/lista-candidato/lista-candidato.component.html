@@ -1,3 +1,15 @@
+<div *ngIf="cargo !== 'presidente'">
+  <label for="select-estados">Exibindo informações para:</label>
+  <select id="select-estados" name="estados" [(ngModel)]="estadoSelecionado" (change)="buscarCandidatos()">
+    <option value="">Selecione um estado</option>
+    <option *ngFor="let estado of estados" [value]="estado.sigla">{{estado.nome}}</option>
+  </select>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="filtro" placeholder="Filtrar por">
+</div>
+
 <table id="customers" title="lista de presidentes" *ngIf="dados">
   <thead>
   <th>Nome do presidente</th>
@@ -5,7 +17,7 @@
   <th>Partido</th>
   </thead>
   <tbody>
-  <tr *ngFor="let item of dados.candidatos" (click)="detalhaCandidato(item)">
+  <tr *ngFor="let item of dados | filtroCandidato:filtro" (click)="detalhaCandidato(item)">
     <td [ngClass]="item.numero === 17 ? 'esse-nao' : ''">{{item.nomeUrna | titlecase}}</td>
     <td [ngClass]="item.numero === 17 ? 'esse-nao' : ''">{{item.numero}}</td>
     <td [ngClass]="item.numero === 17 ? 'esse-nao' : ''">{{item.partido.sigla}}</td>

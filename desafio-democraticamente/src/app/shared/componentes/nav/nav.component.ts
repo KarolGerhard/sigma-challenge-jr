@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  isOpen = true;
+  isOpen = false;
 
   constructor(private router: Router) {
   }
