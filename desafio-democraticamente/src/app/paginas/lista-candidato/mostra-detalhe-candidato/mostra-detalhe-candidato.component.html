@@ -1,1 +1,63 @@
-{{dadosCandidato | json}}
+<h2>Dados Candidato: </h2>
+
+<div class="ui-g">
+  <div class="ui-sm-12 ui-g-2 ui-md-3 ui-lg-1" id="foto">
+    <figure id="figure">
+      <img [src]="dadosCandidato.fotoUrl">
+    </figure>
+  </div>
+
+  <div class="ui-sm-12 ui-g-10 ui-md-9 ui-lg-10 ui-lg-offset-1">
+    <div class="ui-g">
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">NOME COMPLETO: </span>
+        <span>{{dadosCandidato.nomeCompleto | titlecase}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">GÊNERO: </span>
+        <span>{{dadosCandidato.descricaoSexo | titlecase}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">ESTADO CIVIL: </span>
+        <span>{{dadosCandidato.descricaoEstadoCivil | titlecase}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">DATA DE NASCIMENTO: </span>
+        <span>{{dadosCandidato.dataDeNascimento | date: 'dd/MM/yyyy'}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">NACIONALIDADE/ NATURALIDADE: </span>
+        <span>{{dadosCandidato.nacionalidade | titlecase}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">GRAU DE INSTRUÇÃO: </span>
+        <span>{{dadosCandidato.grauInstrucao | titlecase}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">OCUPAÇÃO: </span>
+        <span>{{dadosCandidato.ocupacao | titlecase}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">COLIGAÇÃO: </span>
+        <span>{{dadosCandidato.nomeColigacao}}</span>
+      </div>
+
+      <div class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">COMPOSIÇÃO DA COLIGAÇÃO: </span>
+        <span>{{dadosCandidato.composicaoColigacao}}</span>
+      </div>
+
+      <div *ngIf="dadosCandidato.vices" class="dados ui-sm-12 ui-g-3 ui-lg-2">
+        <span class="label">VICE: </span>
+        <span *ngFor="let vice of dadosCandidato.vices">{{vice.nm_CANDIDATO | titlecase}}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@ import {MostraDetalheCandidatoComponent} from './paginas/lista-candidato/mostra-
 const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'listar/:cargo', component: ListaCandidatoComponent},
-  {path: 'detalhar/:cargo/:id', component: MostraDetalheCandidatoComponent},
+  {path: 'detalhar/:estado/:cargo/:id', component: MostraDetalheCandidatoComponent},
   {path: '**', component: NaoEncontradoComponent},
 
 ];

@@ -10,8 +10,10 @@ import {ConsultaService} from '../../../shared/services/consulta.service';
 export class DetalhaCandidatoComponent implements OnInit, OnChanges {
 
   @Input() candidato: any;
+  @Input() estado: string;
 
   public dadosCandidato: any;
+  public showSpinner = false;
 
   constructor(private consultaService: ConsultaService) {
   }
@@ -20,15 +22,18 @@ export class DetalhaCandidatoComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    if (this.candidato) {
-      const id = this.candidato.id;
-
-      this.consultaService.buscaDetalhesCandidato(this.candidato.cargo.codigo, id)
-        .subscribe(x => {
-          this.dadosCandidato = x;
-        });
-    }
+    this.consultar();
   }
 
-
+  public consultar() {
+    if (this.candidato) {
+      this.showSpinner = true;
+      const id = this.candidato.id;
+      this.consultaService.buscaDetalhesCandidato(this.candidato.cargo.codigo, id, this.estado)
+        .subscribe(x => {
+          this.dadosCandidato = x;
+          this.showSpinner = false;
+        }, error1 => console.log(error1));
+    }
+  }
 }

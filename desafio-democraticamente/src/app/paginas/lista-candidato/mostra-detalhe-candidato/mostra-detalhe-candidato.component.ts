@@ -11,6 +11,7 @@ export class MostraDetalheCandidatoComponent implements OnInit {
   public dadosCandidato: any;
 
   public cargo: string;
+  public estado: string;
   public id: string;
 
 
@@ -19,6 +20,7 @@ export class MostraDetalheCandidatoComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
+      this.estado = params.get('estado');
       this.cargo = params.get('cargo');
       this.id = params.get('id');
       this.buscarCandidato();
@@ -26,7 +28,7 @@ export class MostraDetalheCandidatoComponent implements OnInit {
   }
 
   buscarCandidato() {
-    this.consultaService.buscaDetalhesCandidato(this.cargo, this.id)
+    this.consultaService.buscaDetalhesCandidato(this.cargo, this.id, this.estado)
       .subscribe(x => {
         this.dadosCandidato = x;
       });

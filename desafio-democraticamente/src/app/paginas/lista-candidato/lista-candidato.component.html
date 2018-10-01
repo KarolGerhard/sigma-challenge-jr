@@ -1,33 +1,43 @@
 <div class="seleciona" *ngIf="cargo !== 'presidente'">
   <label for="select-estados">Exibir informações para: </label><br>
   <select id="select-estados" name="estados" [(ngModel)]="estadoSelecionado"
-          (change)="buscarCandidatos(); candidatoSelecionado = null;">
+          (change)="buscarCandidatos()">
     <option value="">Selecione um estado</option>
     <option *ngFor="let estado of estados" [value]="estado.sigla">{{estado.nome}}</option>
   </select>
 </div>
 
 <div class="pesquisa">
-  <input  type="text" [(ngModel)]="filtro" placeholder="Filtrar por">
+  <input type="text" [(ngModel)]="filtro" placeholder="Filtrar por">
 </div>
 
 <div class="conteudo">
-  <table id="customers" title="lista de presidentes" *ngIf="dados">
-    <thead>
-    <th class="row-nome">Nome do candidato</th>
-    <th class="row-numero">Número</th>
-    <th class="row-partido">Partido</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of dados | filtroCandidato:filtro" (click)="detalhaCandidato(item)">
-      <td class="row-nome">{{item.nomeUrna | titlecase}}</td>
-      <td class="row-numero">{{item.numero}}</td>
-      <td class="row-partido">{{item.partido.sigla}}</td>
-    </tr>
-    </tbody>
-  </table>
-  <div id="detalhe" *ngIf="candidatoSelecionado">
-    <app-detalha-candidato [candidato]="candidatoSelecionado"></app-detalha-candidato>
-  </div>
+  <h3>Candidatos</h3>
+  <p-table [value]="dados | filtroCandidato:filtro" [paginator]="true" [rows]="15" [responsive]="true"
+           selectionMode="single" dataKey="numero" [(selection)]="candidatoSelecionado"
+           (onRowSelect)="detalhaCandidato($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="row-nome">Nome do candidato</th>
+        <th class="row-numero">Número</th>
+        <th class="row-partido">Partido</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-item>
+      <tr [pSelectableRow]="rowData">
+        <td class="row-nome">{{item.nomeUrna | titlecase}}</td>
+        <td class="row-numero">{{item.numero}}</td>
+        <td class="row-partido">{{item.partido.sigla}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
+
+<p-dialog [header]="candidatoSelecionado?.nomeUrna" [(visible)]="exibeModal" [modal]="true" [width]="350"
+          (onHide)="candidatoSelecionado = undefined">
+  <app-detalha-candidato [estado]="estadoSelecionado" [candidato]="candidatoSelecionado"></app-detalha-candidato>
+  <p-footer>
+    <p-button label="Ver completo" (onClick)="irParaPaginaCandidato(candidatoSelecionado)"></p-button>
+  </p-footer>
+</p-dialog>
 

@@ -1,0 +1,63 @@
+div{
+  font-family: 'Raleway', sans-serif;
+}
+
+h2{
+  margin-top: 0px;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+#figure{
+  padding: 0 0 0 0;
+  margin: 0 auto;
+  float: left;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+
+.dados{
+  border: #12757b 1pt solid;
+  width: 400px;
+  height: 50px;
+  margin: 10px;
+  background-color: rgba(128, 193, 102, 0.54);
+  text-align: left;
+  padding: 12px 10px;
+  border-radius: 4px;
+  float: left;
+  display: block;
+}
+
+.dados:hover {
+  background-color: rgba(76, 175, 80, 0.19);
+  cursor: pointer;
+  color: #80c166;
+}
+
+.label{
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+@media screen and (max-width: 640px) {
+  .dados{
+    border: #12757b 1pt solid;
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(128, 193, 102, 0.54);
+    text-align: left;
+    padding: 12px 10px;
+    border-radius: 4px;
+    float: left;
+    display: block;
+  }
+  .label{
+    font-weight: bold;
+    font-size: 10pt;
+  }
+}

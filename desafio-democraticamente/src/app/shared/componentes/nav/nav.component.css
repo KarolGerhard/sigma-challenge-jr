@@ -35,6 +35,7 @@ aside#lateral-direita {
   -moz-box-shadow: -8px 0px 13px -6px rgba(189, 189, 189, 1);
   box-shadow: -8px 0px 13px -6px rgba(189, 189, 189, 1);
   font-family: 'Raleway', sans-serif;
+  z-index: 1000;
 }
 
 @media screen and (max-width: 640px) {
@@ -48,11 +49,4 @@ aside#lateral-direita {
     padding: 40px 10px;
   }
 
-  /*header {*/
-    /*position: fixed;*/
-  /*}*/
-
-  /*header:after {*/
-    /*height: 200px;*/
-  /*}*/
 }

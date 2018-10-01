@@ -52,8 +52,11 @@ export class ConsultaService {
       .pipe(map(x => x.candidatos));
   }
 
-  public buscaDetalhesCandidato(codigoCargo: string, idCandidato: string) {
-    const url = +codigoCargo === 1 ? this.URL_DETALHA_PRESIDENTE : this.URL_DETALHA_OUTROS;
+  public buscaDetalhesCandidato(codigoCargo: string, idCandidato: string, estado?: string) {
+    let url = +codigoCargo === 1 || codigoCargo === 'presidente' ? this.URL_DETALHA_PRESIDENTE : this.URL_DETALHA_OUTROS;
+    if (estado) {
+      url = url.replace(this.ESTADO_PADRAO, estado);
+    }
     return this.get(url + idCandidato);
   }
 

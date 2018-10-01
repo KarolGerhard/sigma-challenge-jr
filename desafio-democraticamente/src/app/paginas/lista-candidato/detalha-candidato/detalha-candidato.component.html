@@ -1,30 +1,33 @@
-<div *ngIf="dadosCandidato">
+<p-progressSpinner *ngIf="showSpinner" [style]="{width: '50px', height: '50px'}" strokeWidth="8" fill="#EEEEEE"
+                   animationDuration=".5s"></p-progressSpinner>
+
+<div *ngIf="!showSpinner && dadosCandidato">
   <figure>
     <img [src]="dadosCandidato.fotoUrl">
-    <figcaption>{{dadosCandidato.nomeUrna}}</figcaption>
+    <figcaption>{{dadosCandidato.nomeCompleto | titlecase}}</figcaption>
   </figure>
 
   <div>
-    <span>Cargo: </span>
+    <span class="label">Cargo: </span>
     <span>{{dadosCandidato.cargo.nome}}</span>
   </div>
 
   <div>
-    <span>Candidatura: </span>
+    <span class="label">Candidatura: </span>
     <span>{{dadosCandidato.descricaoSituacao}}</span>
   </div>
 
   <div>
-    <span>Partido: </span>
+    <span class="label">Partido: </span>
     <span>{{dadosCandidato.partido.nome}} ({{dadosCandidato.partido.sigla}})</span>
   </div>
 
   <div>
-    <span>Número: </span>
+    <span class="label">Número: </span>
     <span>{{dadosCandidato.numero}}</span>
   </div>
   <div *ngIf="dadosCandidato.vices">
-    <span>Vices:</span>
+    <span class="label">Vice: </span>
     <span *ngFor="let vice of dadosCandidato.vices">{{vice.nm_CANDIDATO | titlecase}}</span>
   </div>
   <!-- {{dadosCandidato | json}} -->

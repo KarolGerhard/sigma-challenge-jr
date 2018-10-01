@@ -1,42 +1,34 @@
-#customers {
+div.conteudo {
+  width: 700px;
+  margin: 40px auto;
+  position: center;
   font-family: 'Raleway', sans-serif;
+}
+
+table.scroll {
+  width: 80%;
   border-collapse: collapse;
-  /*width: 50%;*/
-  float: left;
-  margin-top: 40px;
+  border-spacing: 0;
 }
 
-/*
-#customers td,
-#customers th {
-
+table.scroll tbody {
+  display: block;
 }
 
-#customers tr:nth-child(even) {
-  background-color: #f2f2f2;
+
+tbody {
+  border-top: 2px solid #80c166;
 }
 
-#customers tr:hover {
-  background-color: #ddd;
-}
-
-#customers th {
-
-
-  color: white;
-}*/
-th {
-  background-color: #80c166;
-}
 
 tr:hover {
   background-color: rgba(84, 123, 106, 0.19);
+  cursor: pointer;
+
 }
 
-th, td {
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-  padding: 12px 10px;
+tbody td:last-child, thead th:last-child {
+  border-right: none;
 }
 
 .seleciona {
@@ -47,15 +39,17 @@ th, td {
 .seleciona > label {
   font-family: 'Raleway', sans-serif;
   font-weight: bolder;
-
+  margin-top: 35px;
+  margin-left: 45%;
 }
 
 .seleciona > select {
-  width: 33%;
+  width: 18%;
   padding: 10px 15px;
   border: none;
   background-color: rgba(76, 175, 80, 0.12);
   margin-top: 10px;
+  margin-left: 42%;
 }
 
 .pesquisa {
@@ -66,15 +60,10 @@ th, td {
 input {
   background: white url('../../../assets/filtro.png') no-repeat 5px 5px;
   padding: 5px 5px 5px 30px;
-  width: 100%;
-  height: 25px;
+  width: 120%;
+  height: 35px;
   border-radius: 4px;
-  margin: 20px auto;
-}
-
-div.conteudo {
-  width: 700px;
-  margin: 0 auto;
+  margin-top: 20px;
 }
 
 #detalhe {
@@ -85,15 +74,16 @@ div.conteudo {
 }
 
 .row-nome {
-  width: 250px;
+  width: 50%;
 }
 
 .row-numero {
-  width: 30px;
+  width: 25%;
 }
 
 .row-partido {
-  width: 60px;
+  width: 25%;
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 1000px) {
@@ -110,6 +100,18 @@ div.conteudo {
 }
 
 @media screen and (max-width: 640px) {
+
+  .seleciona > label {
+    margin-top: 25px;
+    margin-left: 25%;
+  }
+
+  .seleciona > select {
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 25%;
+  }
+
   .pesquisa {
     width: calc(100vw - 30px);
     margin: 0 auto;
@@ -117,7 +119,7 @@ div.conteudo {
 
   input {
     width: 88%;
-    height: 25px;
+    height: 29px;
     border-radius: 4px;
     margin: 20px auto;
   }
@@ -125,14 +127,8 @@ div.conteudo {
   div.conteudo {
     width: 100%;
     margin: 0 auto;
-  }
-
-  table#customers {
-    width: 100%;
-    table-layout: fixed;
-    margin: 0;
-    /*height:200px;*/
     border-collapse: collapse;
+    table-layout: fixed;
   }
 
   .row-nome {
@@ -146,19 +142,4 @@ div.conteudo {
   .row-partido {
     width: 20%;
   }
-
-  /*table#customers thead{*/
-    /*display: block;*/
-    /*width: 360px;*/
-  /*}*/
-
-  /*table#customers tbody {*/
-    /*height: 200px;*/
-    /*width: 360px;*/
-    /*overflow: auto;*/
-  /*}*/
-
-  /*table#customers tbody > tr{*/
-    /*width: 100%;*/
-  /*}*/
 }
